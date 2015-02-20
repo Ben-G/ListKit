@@ -12,16 +12,16 @@ public protocol TableViewCellProtocol {
   
   typealias CellModelType
   
-  init(model: CellModelType)
+  var model: CellModelType {get}
 }
 
 public class ArrayDataSource<T> : NSObject, UITableViewDataSource {
 
   private var array: Array<T>
   
-  public init <U where U:UITableViewCell, U:TableViewCellProtocol> (array:Array<T>, cellClass: U) {
+  public init <U where U:UITableViewCell, U:TableViewCellProtocol> (array:Array<T>, cellSetupFunction: (T) -> (U)) {
     self.array = array
-//    var cell = cellClass()
+    cellSetupFunction(array[0])
   }
 }
 

@@ -10,14 +10,14 @@ import UIKit
 import XCTest
 import ListKit
 
-class CustomTableViewCell <T>: UITableViewCell, TableViewCellProtocol {
-  required init(model: T) {
-    super.init()
-  }
+class CustomTableViewCell <String>: UITableViewCell, TableViewCellProtocol {
 
   required init(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+      super.init(coder: aDecoder)
   }
+  
+  let string = "String"
+  var model:String?
 }
 
 class DataSourceTests: XCTestCase {
@@ -33,12 +33,14 @@ class DataSourceTests: XCTestCase {
     }
     
     func testRowCount() {
-      // This is an example of a functional test case.
       let array = ["Yay", "Test", "Nothing"]
-      ArrayDataSource(array: array, cellClass: CustomTableViewCell(model: "a"))
-//      let source = ArrayDataSource(array: array, cellClass: CustomTableViewCell.self)
-//      let rows = source.tableView(UITableView(), numberOfRowsInSection: 0)
-//      source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath())
-//      XCTAssertEqual(array.count, rows)
+      
+      let source = ArrayDataSource(array: array) { (T) -> CustomTableViewCell<String> in
+        cell.model = T
+      }
+      
+      let rows = source.tableView(UITableView(), numberOfRowsInSection: 0)
+      source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath())
+      XCTAssertEqual(array.count, rows)
     }
 }
