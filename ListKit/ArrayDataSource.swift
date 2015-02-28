@@ -14,16 +14,14 @@ public protocol TableViewCellProtocol {
   
   var model: CellType? {get set}
   
-  init()
+  init(cellContent: CellType)
 }
 
 public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
 
   private var array: Array<T>
-  private var customCellType: U.Type
   
   public init (array:Array<T>, cellType: U.Type) {
-    self.customCellType = U.self
     self.array = array
   }
 }
@@ -34,7 +32,7 @@ extension ArrayDataSource {
   }
   
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = customCellType()
+    let cell = U()
     cell.model = array[indexPath.row]
 
     return cell

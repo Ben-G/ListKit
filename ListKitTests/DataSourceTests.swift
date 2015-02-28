@@ -28,6 +28,11 @@ class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
   }
   
+  convenience required init(cellContent: String) {
+    self.init()
+    self.model = cellContent
+  }
+  
   let string = "String"
   var model:String? {
     didSet {
