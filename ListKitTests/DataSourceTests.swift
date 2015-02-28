@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import ListKit
 
-class CustomTableViewCell <T>: UITableViewCell, TableViewCellProtocol {
+class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
   
   required init(coder aDecoder: NSCoder) {
       super.init(coder: aDecoder)
@@ -24,8 +24,12 @@ class CustomTableViewCell <T>: UITableViewCell, TableViewCellProtocol {
     super.init(frame:CGRectZero)
   }
   
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+  }
+  
   let string = "String"
-  var model:T?
+  var model:AnyObject?
 }
 
 class DataSourceTests: XCTestCase {
@@ -43,7 +47,7 @@ class DataSourceTests: XCTestCase {
     func testRowCount() {
       let array = ["Yay", "Test", "Nothing"]
       
-      let source = ArrayDataSource(array: array, cellType: CustomTableViewCell<String>.self)
+      let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
       
       let rows = source.tableView(UITableView(), numberOfRowsInSection: 0)
       source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath())

@@ -11,9 +11,7 @@ import UIKit
 
 public protocol TableViewCellProtocol {
   
-  typealias CellModelType
-  
-  var model: CellModelType {get}
+  var model: AnyObject? {get}
   
   init()
 }
