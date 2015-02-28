@@ -18,13 +18,13 @@ public protocol TableViewCellProtocol {
   init()
 }
 
-public class ArrayDataSource<T where T:TableViewCellProtocol, T:UITableViewCell> : NSObject, UITableViewDataSource {
+public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell> : NSObject, UITableViewDataSource {
 
   private var array: Array<T>
-  private var customCellType: T.Type
+  private var customCellType: U.Type
   
-  public init (array:Array<T>) {
-    self.customCellType = T.self
+  public init (array:Array<T>, cellType: U.Type) {
+    self.customCellType = U.self
     self.array = array
   }
 }

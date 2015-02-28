@@ -43,7 +43,7 @@ class DataSourceTests: XCTestCase {
     func testRowCount() {
       let array = ["Yay", "Test", "Nothing"]
       
-      let source = ArrayDataSource(array: array, CustomTableViewCell)
+      let source = ArrayDataSource(array: array, cellType: CustomTableViewCell<String>.self)
       
       let rows = source.tableView(UITableView(), numberOfRowsInSection: 0)
       source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath())
