@@ -29,7 +29,11 @@ class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
   }
   
   let string = "String"
-  var model:AnyObject?
+  var model:AnyObject? {
+    didSet {
+      self.textLabel!.text = model as? String
+    }
+  }
 }
 
 class DataSourceTests: XCTestCase {
@@ -50,7 +54,14 @@ class DataSourceTests: XCTestCase {
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
       
       let rows = source.tableView(UITableView(), numberOfRowsInSection: 0)
-      source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath())
       XCTAssertEqual(array.count, rows)
+    }
+  
+    func testCell() {
+      let array = ["Yay", "Test", "Nothing"]
+      let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
+      let cell = source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
+      
+      XCTAssertEqual(cell.textLabel!.text!, "Yay")
     }
 }

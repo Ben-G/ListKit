@@ -11,12 +11,12 @@ import UIKit
 
 public protocol TableViewCellProtocol {
   
-  var model: AnyObject? {get}
+  var model: AnyObject? {get set}
   
   init()
 }
 
-public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell> : NSObject, UITableViewDataSource {
+public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T:AnyObject> : NSObject, UITableViewDataSource {
 
   private var array: Array<T>
   private var customCellType: U.Type
@@ -33,7 +33,10 @@ extension ArrayDataSource {
   }
   
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return customCellType()
+    let cell = customCellType()
+    cell.model = array[indexPath.row]
+
+    return cell
   }
 }
 
