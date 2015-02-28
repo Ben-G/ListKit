@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 
 public protocol TableViewCellProtocol {
+  typealias CellType
   
-  var model: AnyObject? {get set}
+  var model: CellType? {get set}
   
   init()
 }
 
-public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T:AnyObject> : NSObject, UITableViewDataSource {
+public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
 
   private var array: Array<T>
   private var customCellType: U.Type

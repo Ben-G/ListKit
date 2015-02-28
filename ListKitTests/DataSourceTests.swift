@@ -29,9 +29,9 @@ class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
   }
   
   let string = "String"
-  var model:AnyObject? {
+  var model:String? {
     didSet {
-      self.textLabel!.text = model as? String
+      self.textLabel!.text = model
     }
   }
 }
