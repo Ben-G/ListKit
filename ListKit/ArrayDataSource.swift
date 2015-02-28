@@ -13,8 +13,6 @@ public protocol TableViewCellProtocol {
   typealias CellType
   
   var model: CellType? {get set}
-  
-  init(cellContent: CellType)
 }
 
 public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
@@ -34,7 +32,7 @@ extension ArrayDataSource {
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = U()
     cell.model = array[indexPath.row]
-
+    
     return cell
   }
 }

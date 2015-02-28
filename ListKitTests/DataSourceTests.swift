@@ -11,29 +11,6 @@ import XCTest
 import ListKit
 
 class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
-  
-  required init(coder aDecoder: NSCoder) {
-      super.init(coder: aDecoder)
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-  }
-  
-  required override init() {
-    super.init(frame:CGRectZero)
-  }
-  
-  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-  }
-  
-  convenience required init(cellContent: String) {
-    self.init()
-    self.model = cellContent
-  }
-  
-  let string = "String"
   var model:String? {
     didSet {
       self.textLabel!.text = model
