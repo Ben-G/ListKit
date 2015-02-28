@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		622C76B21AA261E5009FDC37 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265185C1A96476900F1D760 /* ArrayDataSource.swift */; };
+		622C76B31AA27DB0009FDC37 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265185C1A96476900F1D760 /* ArrayDataSource.swift */; };
 		626518181A96473700F1D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626518171A96473700F1D760 /* AppDelegate.swift */; };
 		6265181A1A96473700F1D760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626518191A96473700F1D760 /* ViewController.swift */; };
 		6265181D1A96473700F1D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6265181B1A96473700F1D760 /* Main.storyboard */; };
@@ -19,7 +19,6 @@
 		626518501A96474900F1D760 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265184F1A96474900F1D760 /* DataSourceTests.swift */; };
 		626518531A96474900F1D760 /* ListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; };
 		626518541A96474900F1D760 /* ListKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6265185D1A96476900F1D760 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265185C1A96476900F1D760 /* ArrayDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,7 +388,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6265181A1A96473700F1D760 /* ViewController.swift in Sources */,
-				622C76B21AA261E5009FDC37 /* ArrayDataSource.swift in Sources */,
 				626518181A96473700F1D760 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6265185D1A96476900F1D760 /* ArrayDataSource.swift in Sources */,
+				622C76B31AA27DB0009FDC37 /* ArrayDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

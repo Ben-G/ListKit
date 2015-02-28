@@ -11,9 +11,9 @@ import XCTest
 import ListKit
 
 class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
-  var model:String? {
+  var model:AnyObject? {
     didSet {
-      self.textLabel!.text = model
+      self.textLabel!.text = model as String?
     }
   }
 }
@@ -31,8 +31,9 @@ class DataSourceTests: XCTestCase {
     }
     
     func testRowCount() {
-      let array = ["Yay", "Test", "Nothing"]
-      
+      var array: [NSString]
+      array = ["Yay", "Test", "Nothing"]
+    
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
       
       let rows = source.tableView(UITableView(), numberOfRowsInSection: 0)
@@ -40,18 +41,20 @@ class DataSourceTests: XCTestCase {
     }
   
     func testCell() {
-      let array = ["Yay", "Test", "Nothing"]
+      var array: [NSString]
+      array = ["Yay", "Test", "Nothing"]
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
       let cell = source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
       
       XCTAssertEqual(cell.textLabel!.text!, "Yay")
     }
   
-  func testWithTableView() {
-    let tableView = UITableView()
-    let array = ["Yay", "Test", "Nothing"]
-    let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
-    tableView.dataSource = source
-    tableView.reloadData()
-  }
+    func testWithTableView() {
+      let tableView = UITableView()
+      var array: [NSString]
+      array = ["Yay", "Test", "Nothing"]
+      let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self).toObjC()
+      tableView.dataSource = source
+      tableView.reloadData()
+    }
 }

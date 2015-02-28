@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import ListKit
 
-class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
-  var model:String? {
+class CustomTableViewCell: UITableViewCell, TableViewCellProtocol, ObjCTableViewCellProtocol {
+  var model:AnyObject? {
     didSet {
-      self.textLabel!.text = model
+      self.textLabel!.text = model as String?
     }
   }
 }
@@ -20,14 +21,14 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   
-  var dataSource: ArrayDataSource<CustomTableViewCell, String>?
+  var dataSource: ArrayDataSourceObjC?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     let array = ["Yay", "Test", "Nothing"]
 
-    dataSource = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
+    dataSource = ArrayDataSource(array: array, cellType: CustomTableViewCell.self).toObjC()
     
     tableView.dataSource = dataSource
   }
