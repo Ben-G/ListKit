@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622C76B21AA261E5009FDC37 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265185C1A96476900F1D760 /* ArrayDataSource.swift */; };
 		626518181A96473700F1D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626518171A96473700F1D760 /* AppDelegate.swift */; };
 		6265181A1A96473700F1D760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626518191A96473700F1D760 /* ViewController.swift */; };
 		6265181D1A96473700F1D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6265181B1A96473700F1D760 /* Main.storyboard */; };
@@ -388,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6265181A1A96473700F1D760 /* ViewController.swift in Sources */,
+				622C76B21AA261E5009FDC37 /* ArrayDataSource.swift in Sources */,
 				626518181A96473700F1D760 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +688,7 @@
 				626518331A96473700F1D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		626518341A96473700F1D760 /* Build configuration list for PBXNativeTarget "ListKitDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -694,6 +697,7 @@
 				626518361A96473700F1D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		626518551A96474900F1D760 /* Build configuration list for PBXNativeTarget "ListKit" */ = {
 			isa = XCConfigurationList;
@@ -702,6 +706,7 @@
 				626518571A96474900F1D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		626518591A96474900F1D760 /* Build configuration list for PBXNativeTarget "ListKitTests" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +715,7 @@
 				6265185B1A96474900F1D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

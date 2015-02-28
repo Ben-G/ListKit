@@ -8,18 +8,29 @@
 
 import UIKit
 
+class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
+  var model:String? {
+    didSet {
+      self.textLabel!.text = model
+    }
+  }
+}
+
 class ViewController: UIViewController {
 
+  @IBOutlet weak var tableView: UITableView!
+  
+  var dataSource: ArrayDataSource<CustomTableViewCell, String>?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
+    
+    let array = ["Yay", "Test", "Nothing"]
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+    dataSource = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
+    
+    tableView.dataSource = dataSource
   }
-
 
 }
 

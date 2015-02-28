@@ -46,4 +46,12 @@ class DataSourceTests: XCTestCase {
       
       XCTAssertEqual(cell.textLabel!.text!, "Yay")
     }
+  
+  func testWithTableView() {
+    let tableView = UITableView()
+    let array = ["Yay", "Test", "Nothing"]
+    let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
+    tableView.dataSource = source
+    tableView.reloadData()
+  }
 }

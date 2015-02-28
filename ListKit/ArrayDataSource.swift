@@ -15,25 +15,32 @@ public protocol TableViewCellProtocol {
   var model: CellType? {get set}
 }
 
+@objc(ArrayDataSource)
 public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
 
+  let cellIdentifier = "arrayDataSourceCell"
+  
   private var array: Array<T>
   
   public init (array:Array<T>, cellType: U.Type) {
     self.array = array
   }
-}
-
-extension ArrayDataSource {
+  
   public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return array.count
   }
-  
+
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = U()
-    cell.model = array[indexPath.row]
+    var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as U?
     
-    return cell
+    if let cell = cell {
+      cell.model = array[indexPath.row]
+    } else {
+      cell = U(style: .Default, reuseIdentifier: cellIdentifier)
+      cell!.model = array[indexPath.row]
+    }
+    
+    return cell!
   }
 }
 
