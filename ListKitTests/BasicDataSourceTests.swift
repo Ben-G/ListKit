@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Benjamin Encz. All rights reserved.
 //
 
-import UIKit
 import XCTest
+import UIKit
 import ListKit
 
 class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
@@ -18,18 +18,8 @@ class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
   }
 }
 
-class DataSourceTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
+class BasicDataSourceTests: XCTestCase {
+  
     func testRowCount() {
       var array: [NSString]
       array = ["Yay", "Test", "Nothing"]
@@ -49,12 +39,4 @@ class DataSourceTests: XCTestCase {
       XCTAssertEqual(cell.textLabel!.text!, "Yay")
     }
   
-//    func testWithTableView() {
-//      let tableView = UITableView()
-//      var array: [NSString]
-//      array = ["Yay", "Test", "Nothing"]
-//      let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self).toObjC()
-//      tableView.dataSource = source
-//      tableView.reloadData()
-//    }
 }

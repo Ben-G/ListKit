@@ -15,15 +15,22 @@ public protocol TableViewCellProtocol {
   var model: CellType? {get set}
 }
 
-//@objc(ArrayDataSource)
 public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
 
   let cellIdentifier = "arrayDataSourceCell"
+  
+  private let nib: UINib?
 
-  private var array: Array<T>
+  public var array: Array<T>
   
   public init (array:Array<T>, cellType: U.Type) {
     self.array = array
+    self.nib = nil
+  }
+  
+  public init (array:Array<T>, cellType: U.Type, nib: UINib) {
+    self.array = array
+    self.nib = nib
   }
   
   public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,13 +43,19 @@ public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCe
     if let cell = cell {
       cell.model = array[indexPath.row]
     } else {
-      cell = U(style: .Default, reuseIdentifier: cellIdentifier)
-      cell!.model = array[indexPath.row]
+      if let nib = nib {
+        // if nib was registered, load from there
+        tableView.registerNib(nib, forCellReuseIdentifier: cellIdentifier)
+        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? U
+        cell!.model = array[indexPath.row]
+      } else {
+        // else, create cell programatically
+        cell = U(style: .Default, reuseIdentifier: cellIdentifier)
+        cell!.model = array[indexPath.row]
+      }
     }
     
     return cell!
   }
   
 }
-
-
