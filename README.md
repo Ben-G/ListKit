@@ -21,6 +21,8 @@ Instead configure a data source with your content and your custom cell:
 
 #Usage
 
+You can find both examples below as part of the demo project in this repository.
+
 ##Table View with Simple Custom Cell
 
 A table view that doesn't require a cell with a XIB file can be implemented as following:
