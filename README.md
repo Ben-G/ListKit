@@ -17,7 +17,7 @@ Instead configure a data source with your content and your custom cell:
 	
 ##Cocoapods
 
-	pod 'Gloss'
+	pod 'ListKit'
 
 #Usage
 
