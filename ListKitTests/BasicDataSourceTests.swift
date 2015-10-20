@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 import ListKit
 
-class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
+class CustomTableViewCell: UITableViewCell, ListKitCellProtocol {
   var model:AnyObject? {
     didSet {
       self.textLabel!.text = model as! String?
@@ -21,7 +21,7 @@ class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
 class BasicDataSourceTests: XCTestCase {
   
     func testRowCount() {
-      var array: [NSString]
+      var array: [String]
       array = ["Yay", "Test", "Nothing"]
     
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
@@ -31,7 +31,7 @@ class BasicDataSourceTests: XCTestCase {
     }
   
     func testCell() {
-      var array: [NSString]
+      var array: [String]
       array = ["Yay", "Test", "Nothing"]
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
       let cell = source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))

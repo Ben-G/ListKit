@@ -19,8 +19,6 @@ class CityViewController: UIViewController {
     super.viewDidLoad()
     
     // Set up cities
-    var cities: [City]
-    
     let city1 = City(
       name: "Stuttgart",
       country: "Germany",
@@ -33,7 +31,7 @@ class CityViewController: UIViewController {
       image: UIImage(named: "sf.jpg")!
     )
     
-    cities = [city1, city2]
+    let cities = [city1, city2]
     
     let nib = UINib(nibName: "CityCell", bundle: NSBundle.mainBundle())
 

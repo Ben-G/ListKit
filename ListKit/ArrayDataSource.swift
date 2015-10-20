@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-public protocol TableViewCellProtocol {
+public protocol ListKitCellProtocol {
   typealias CellType
   
   var model: CellType? {get set}
 }
 
-public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
+public class ArrayDataSource<U, T where U:ListKitCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
 
   let cellIdentifier = "arrayDataSourceCell"
   
@@ -23,12 +23,12 @@ public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCe
 
   public var array: Array<T>
   
-  public init (array:Array<T>, cellType: U.Type) {
+  public init (array:Array<T> = [], cellType: U.Type) {
     self.array = array
     self.nib = nil
   }
   
-  public init (array:Array<T>, cellType: U.Type, nib: UINib) {
+  public init (array:Array<T> = [], cellType: U.Type, nib: UINib) {
     self.array = array
     self.nib = nib
   }
@@ -40,7 +40,7 @@ public class ArrayDataSource<U, T where U:TableViewCellProtocol, U:UITableViewCe
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! U?
     
-    if let cell = cell {
+    if var cell = cell {
       cell.model = array[indexPath.row]
     } else {
       if let nib = nib {

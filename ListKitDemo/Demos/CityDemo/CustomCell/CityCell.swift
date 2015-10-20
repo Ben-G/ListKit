@@ -9,7 +9,7 @@
 import UIKit
 import ListKit
 
-class CityCell: UITableViewCell, TableViewCellProtocol {
+class CityCell: UITableViewCell, ListKitCellProtocol {
   
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var subLabel: UILabel!
@@ -18,9 +18,7 @@ class CityCell: UITableViewCell, TableViewCellProtocol {
     var model: City? {
       didSet {
         if mainLabel != nil {
-          mainLabel.text = model?.name
-          subLabel.text = model?.country
-          mainImageView.image = model?.image
+          configureCell()
         }
       }
     }
@@ -28,6 +26,10 @@ class CityCell: UITableViewCell, TableViewCellProtocol {
   override func awakeFromNib() {
     super.awakeFromNib()
     
+    configureCell()
+  }
+  
+  func configureCell() {
     mainLabel.text = model?.name
     subLabel.text = model?.country
     mainImageView.image = model?.image

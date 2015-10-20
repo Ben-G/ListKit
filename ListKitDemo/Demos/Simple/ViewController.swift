@@ -9,8 +9,8 @@
 import UIKit
 import ListKit
 
-class CustomTableViewCell: UITableViewCell, TableViewCellProtocol {
-  var model:String? {
+class CustomTableViewCell: UITableViewCell, ListKitCellProtocol {
+  var model: String? {
     didSet {
       self.textLabel!.text = model as String?
     }
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+      
     dataSource = ArrayDataSource(array: ["Test", "Another One", "OK"], cellType: CustomTableViewCell.self)
     tableView.dataSource = dataSource
   }
