@@ -35,8 +35,8 @@
 		626518411A96474900F1D760 /* ListKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 626518401A96474900F1D760 /* ListKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		626518471A96474900F1D760 /* ListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; };
 		626518501A96474900F1D760 /* BasicDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265184F1A96474900F1D760 /* BasicDataSourceTests.swift */; };
-		626518531A96474900F1D760 /* ListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; };
-		626518541A96474900F1D760 /* ListKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62A34B3E1BD610F60025771B /* ListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; };
+		62A34B3F1BD610F60025771B /* ListKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265183C1A96474900F1D760 /* ListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 			remoteGlobalIDString = 626518111A96473700F1D760;
 			remoteInfo = ListKitDemo;
 		};
-		626518511A96474900F1D760 /* PBXContainerItemProxy */ = {
+		62A34B401BD610F70025771B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6265180A1A96473700F1D760 /* Project object */;
 			proxyType = 1;
@@ -71,13 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		626518581A96474900F1D760 /* Embed Frameworks */ = {
+		62A34B421BD610F70025771B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				626518541A96474900F1D760 /* ListKit.framework in Embed Frameworks */,
+				62A34B3F1BD610F60025771B /* ListKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,7 +102,7 @@
 		6265181C1A96473700F1D760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6265181E1A96473700F1D760 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		626518211A96473700F1D760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		626518271A96473700F1D760 /* ListKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		626518271A96473700F1D760 /* ListKit.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListKit.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6265182C1A96473700F1D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6265182D1A96473700F1D760 /* ListKitDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListKitDemoTests.swift; sourceTree = "<group>"; };
 		6265183C1A96474900F1D760 /* ListKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ListKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				626518531A96474900F1D760 /* ListKit.framework in Frameworks */,
+				62A34B3E1BD610F60025771B /* ListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				626518121A96473700F1D760 /* ListKitDemo.app */,
-				626518271A96473700F1D760 /* ListKitDemoTests.xctest */,
+				626518271A96473700F1D760 /* ListKit.xctest */,
 				6265183C1A96474900F1D760 /* ListKit.framework */,
 				626518461A96474900F1D760 /* ListKitTests.xctest */,
 			);
@@ -314,12 +314,12 @@
 				6265180E1A96473700F1D760 /* Sources */,
 				6265180F1A96473700F1D760 /* Frameworks */,
 				626518101A96473700F1D760 /* Resources */,
-				626518581A96474900F1D760 /* Embed Frameworks */,
+				62A34B421BD610F70025771B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				626518521A96474900F1D760 /* PBXTargetDependency */,
+				62A34B411BD610F70025771B /* PBXTargetDependency */,
 			);
 			name = ListKitDemo;
 			productName = ListKitDemo;
@@ -341,7 +341,7 @@
 			);
 			name = ListKitDemoTests;
 			productName = ListKitDemoTests;
-			productReference = 626518271A96473700F1D760 /* ListKitDemoTests.xctest */;
+			productReference = 626518271A96473700F1D760 /* ListKit.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		6265183B1A96474900F1D760 /* ListKit */ = {
@@ -389,7 +389,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Benjamin Encz";
 				TargetAttributes = {
 					626518111A96473700F1D760 = {
@@ -407,7 +407,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6265180D1A96473700F1D760 /* Build configuration list for PBXProject "ListKitDemo" */;
+			buildConfigurationList = 6265180D1A96473700F1D760 /* Build configuration list for PBXProject "ListKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -532,10 +532,10 @@
 			target = 626518111A96473700F1D760 /* ListKitDemo */;
 			targetProxy = 6265184A1A96474900F1D760 /* PBXContainerItemProxy */;
 		};
-		626518521A96474900F1D760 /* PBXTargetDependency */ = {
+		62A34B411BD610F70025771B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6265183B1A96474900F1D760 /* ListKit */;
-			targetProxy = 626518511A96474900F1D760 /* PBXContainerItemProxy */;
+			targetProxy = 62A34B401BD610F70025771B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -579,6 +579,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -642,10 +643,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ListKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = ListKitDemo;
 			};
 			name = Debug;
 		};
@@ -653,10 +656,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ListKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = ListKitDemo;
 			};
 			name = Release;
 		};
@@ -674,8 +679,9 @@
 				);
 				INFOPLIST_FILE = ListKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ListKitDemo.app/ListKitDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = ListKit;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ListKit.app/ListKit";
 			};
 			name = Debug;
 		};
@@ -689,8 +695,9 @@
 				);
 				INFOPLIST_FILE = ListKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ListKitDemo.app/ListKitDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = ListKit;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ListKit.app/ListKit";
 			};
 			name = Release;
 		};
@@ -711,6 +718,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -732,6 +740,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -742,10 +751,6 @@
 		6265185A1A96474900F1D760 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -753,6 +758,7 @@
 				INFOPLIST_FILE = ListKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -760,13 +766,10 @@
 		6265185B1A96474900F1D760 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = ListKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Benjamin-Encz.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -774,7 +777,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6265180D1A96473700F1D760 /* Build configuration list for PBXProject "ListKitDemo" */ = {
+		6265180D1A96473700F1D760 /* Build configuration list for PBXProject "ListKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6265182F1A96473700F1D760 /* Debug */,

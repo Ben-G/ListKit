@@ -1,6 +1,11 @@
 #ListKit
 
-ListKit allows you to use table views in your app without implementing the `UITableViewDataSource` protocol yourself. The framework provides different ways to initialize a table view with custom cells. ListKit uses generics to ensure that the content displayed in the table view matches the custom cells you are providing.
+ListKit allows you to use table views in your app **without implementing the `UITableViewDataSource` protocol yourself**. The framework provides different ways to initialize a table view with custom cells. ListKit uses generics to ensure that the content displayed in the table view matches the custom cells you are providing.
+
+Instead configure a data source with your content and your custom cell:
+
+	dataSource = ArrayDataSource(array: ["Test", "Another One", "OK"], cellType: CustomTableViewCell.self)
+	tableView.dataSource = dataSource
 
 #Usage
 
@@ -77,19 +82,6 @@ You will likely create a separate Swift file for your custom cell, it needs to i
 	
 From within your view controller you can configure the table view and data source as following:
 
-	// Set up cities
-    let city1 = City(
-      name: "Stuttgart",
-      country: "Germany",
-      image: UIImage(named: "stuttgart.jpg")!
-    )
-    
-    let city2 = City(
-      name: "San Francisco",
-      country: "USA",
-      image: UIImage(named: "sf.jpg")!
-    )
-    
     let cities = [city1, city2]
     
     let nib = UINib(nibName: "CityCell", bundle: NSBundle.mainBundle())
