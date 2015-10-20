@@ -111,6 +111,6 @@ The result from the demo looks as following:
 
 #Acknowledgements
 
-I first encountered the idea of an `ArrayDataSource` [in objc.io issue #1](https://www.objc.io/issues/1-view-controllers/lighter-view-controllers/). This microframework is based on the idea. It adds type safety by leveraging Swift generics.
+I first encountered the idea of an `ArrayDataSource` [in objc.io issue #1](https://www.objc.io/issues/1-view-controllers/lighter-view-controllers/). This microframework is based on the idea from the article. This project takes a slightly different approach and also adds type safety by leveraging Swift generics.
 
 
