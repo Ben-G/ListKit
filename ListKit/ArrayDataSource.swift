@@ -9,25 +9,37 @@
 import Foundation
 import UIKit
 
+/// A `UITableViewCell` adopoting this type can be used together
+/// with the `ArrayDataSource` class.
 public protocol ListKitCellProtocol {
   typealias CellType
   
+  /// Stores the content that is represented within the cell.
+  /// Types adopting this protocol should update the UI when this
+  /// property is set
   var model: CellType? {get set}
 }
 
+/// Implements the `UITableViewDataSource` protocol. Needs to be initialized with a custom cell class.
+/// Optionally you can provide a NIB file from which the cell should be created. You define the content
+/// of the table view by setting the `array` property.
 public class ArrayDataSource<U, T where U:ListKitCellProtocol, U:UITableViewCell, T == U.CellType> : NSObject, UITableViewDataSource {
 
   let cellIdentifier = "arrayDataSourceCell"
   
   private let nib: UINib?
 
+  /// The content represented in the table view
   public var array: Array<T>
   
+  /// Initialize with a custom cell type
   public init (array:Array<T> = [], cellType: U.Type) {
     self.array = array
     self.nib = nil
   }
   
+  /// Initialize with a custom cell type and a NIB file from which 
+  /// the cell should be loaded
   public init (array:Array<T> = [], cellType: U.Type, nib: UINib) {
     self.array = array
     self.nib = nib

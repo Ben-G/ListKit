@@ -1,3 +1,5 @@
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 #ListKit
 
 ListKit allows you to use table views in your app **without implementing the `UITableViewDataSource` protocol yourself**. The framework provides different ways to initialize a table view with custom cells. ListKit uses generics to ensure that the content displayed in the table view matches the custom cells you are providing.
