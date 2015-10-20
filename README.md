@@ -8,6 +8,16 @@ Instead configure a data source with your content and your custom cell:
 
 	dataSource = ArrayDataSource(array: ["Test", "Another One", "OK"], cellType: CustomTableViewCell.self)
 	tableView.dataSource = dataSource
+	
+#Installation
+
+##Carthage
+
+	github "Ben-G/ListKit"
+	
+##Cocoapods
+
+	pod 'Gloss'
 
 #Usage
 
