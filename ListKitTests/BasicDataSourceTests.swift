@@ -13,7 +13,7 @@ import ListKit
 class CustomTableViewCell: UITableViewCell, ListKitCellProtocol {
   var model:AnyObject? {
     didSet {
-      self.textLabel!.text = model as! String?
+      self.textLabel!.text = model as? String
     }
   }
 }
@@ -36,7 +36,7 @@ class BasicDataSourceTests: XCTestCase {
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
       let cell = source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
       
-      XCTAssertEqual(cell.textLabel!.text!, "Yay")
+      XCTAssertEqual(cell.textLabel!.text, "Yay")
     }
   
 }

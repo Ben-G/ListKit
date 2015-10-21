@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-/// A `UITableViewCell` adopoting this type can be used together
+/// A `UITableViewCell` adopting this type can be used together
 /// with the `ArrayDataSource` class.
 public protocol ListKitCellProtocol {
   typealias CellType
@@ -50,24 +50,25 @@ public class ArrayDataSource<U, T where U:ListKitCellProtocol, U:UITableViewCell
   }
 
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! U?
+    var nullableCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? U
     
-    if var cell = cell {
-      cell.model = array[indexPath.row]
-    } else {
+    if nullableCell == nil {
       if let nib = nib {
-        // if nib was registered, load from there
         tableView.registerNib(nib, forCellReuseIdentifier: cellIdentifier)
-        cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? U
-        cell!.model = array[indexPath.row]
+        nullableCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? U
       } else {
-        // else, create cell programatically
-        cell = U(style: .Default, reuseIdentifier: cellIdentifier)
-        cell!.model = array[indexPath.row]
+        nullableCell = U(style: .Default, reuseIdentifier: cellIdentifier)
       }
     }
     
-    return cell!
+    // This can only be invalid if `nib` specifies a cell with the wrong class and the first dequeue didn't work
+    guard var cell = nullableCell else {
+      fatalError("Unable to dequeue valid cell of type \(U.self) from reuse identifier \(cellIdentifier) or create cell of type \(U.self) from nib \(nib)")
+    }
+    
+    cell.model = array[indexPath.row]
+    
+    return cell
   }
   
 }
