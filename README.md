@@ -15,7 +15,7 @@ Instead configure a data source with your content and your custom cell:
 
 	github "Ben-G/ListKit"
 	
-##Cocoapods
+##CocoaPods
 
 	pod 'ListKit'
 
