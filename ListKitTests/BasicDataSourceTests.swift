@@ -34,7 +34,7 @@ class BasicDataSourceTests: XCTestCase {
       var array: [String]
       array = ["Yay", "Test", "Nothing"]
       let source = ArrayDataSource(array: array, cellType: CustomTableViewCell.self)
-      let cell = source.tableView(UITableView(), cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
+      let cell = source.tableView(UITableView(), cellForRowAt: IndexPath(row: 0, section: 0))
       
       XCTAssertEqual(cell.textLabel!.text, "Yay")
     }
