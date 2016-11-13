@@ -394,7 +394,7 @@
 				TargetAttributes = {
 					626518111A96473700F1D760 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					626518261A96473700F1D760 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -402,11 +402,11 @@
 					};
 					6265183B1A96474900F1D760 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					626518451A96474900F1D760 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
